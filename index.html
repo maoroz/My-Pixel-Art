@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PixelArt</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="pixelart.css">
+	<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script src="html2canvas.js"></script>
+	<script src="pixelart.js"></script>
+</head>
+<body>
+	<div id="contenedorPadre">
+			<button class="btn" id="btnMenu">
+				<span class="ion-navicon-round"></span>
+			</button>
+		<div id="contenedorHijo">
+			<div id="container" class="grilla">
+			</div>
+			<div class="claseactions">
+				<div id="color-pick">
+					<!--amarillos y naranjas-->
+					<div class="#ffffcc"></div>
+					<div class="#ffff99"></div>
+					<div class="#ffff4d"></div>
+					<div class="#ffff00"></div>
+					<div class="#ffb31a"></div>
+					<div class="#ffaa00"></div>
+					<div class=" #ffa31a"></div>
+					<div class="#ffad33"></div>
+					<div class="#ffc266"></div>
+					<div class="#ffd699"></div>
+					<div class="#ffebcc"></div>
+					<!--rojos-->
+					<div class="#ffe6e6"></div>
+					<div class="#ffb3b3"></div>
+					<div class="#ff8080"></div>
+					<div class="#ff3333"></div>
+					<div class="#ff0000"></div>
+					<div class="#cc0000"></div>
+					<div class="#660000"></div>
+					<div class="#391313"></div>
+					<div class="#862d2d"></div>
+					<div class="#bf4040"></div>
+					<div class="#d98c8c"></div>
+					<!--rosas y violetas-->
+					<div class="#ffe6ff"></div>
+					<div class="#ffb3ff"></div>
+					<div class="#ff80ff"></div>
+					<div class="#ff4dff"></div>
+					<div class="#ff00ff"></div>
+					<div class="#cc00cc"></div>
+					<div class="#bf00ff"></div>
+					<div class="#cc33ff"></div>
+					<div class="#df80ff"></div>
+					<div class="#df80ff"></div>
+					<div class="#f2ccff"></div>
+					<!--verdes-->
+					<div class="#e6ffee"></div>
+					<div class="#ccffdd"></div>
+					<div class="#b3ffcc"></div>
+					<div class="#80ff80"></div>
+					<div class="#66ff99"></div>
+					<div class="#1aff66"></div>
+					<div class="#00cc44"></div>
+					<div class="#009933"></div>
+					<div class="#006622"></div>
+					<div class="#004d1a"></div>
+					<div class="#003300"></div>
+					<!--azules-->
+					<div class="#e6ecff"></div>
+					<div class="#b3c6ff"></div>
+					<div class="#66b3ff"></div>
+					<div class="#3399ff"></div>
+					<div class="#0073e6"></div>
+					<div class="#668cff"></div>
+					<div class="#3366ff"></div>
+					<div class="#0040ff"></div>
+					<div class="#002db3"></div>
+					<div class="#001a66"></div>
+					<div class="#000d33"></div>
+					<!--grises-->
+					<div class="#ffffff"></div>
+					<div class="#f2f2f2"></div>
+					<div class="#d9d9d9"></div>
+					<div class="#b3b3b3"></div>
+					<div class="#999999"></div>
+					<div class="#808080"></div>
+					<div class="#737373"></div>
+					<div class="#4d4d4d"></div>
+					<div class="#262626"></div>
+					<div class="#1a1a1a"></div>
+					<div class="#000000"></div>
+				</div>
+				<div class="acciones_botones">
+					<div class="edicionTam">
+						<p id="text-size">Tamaño</p>
+						<input type="" name="" id="valorTamanio">
+						<button class="btn" id="botonTamanio">
+							<span class="ion-ios-arrow-forward"></span>
+						</button>
+					</div>
+					<button id="save-image" class="btn">
+						<span class="ion-android-archive"></span>
+					</button>
+					<button id="toggle-border" class="btn">
+						<span class="ion-ios-grid-view-outline"></span>
+					</button>
+					<button id="reset" class="btn">
+						<span class="ion-android-delete"></span>
+					</button>
+					<button class="btn" id="pintarTodasGrillas">
+						<span class="ion-paintbucket"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav class="nav">
+		<div id="menuInterno">
+			<button class="btn" id="btnMenuClose">
+				<span class="ion-close"></span>
+			</button>
+			<h2>Funcionalidad</h2>
+			<ol>
+					<li>
+						<p class="text-menu">Elige un color.</p>
+						<div class="imgMenu" id="imgColor"></div>
+						<p class="ex">Elige entre los muchos colores propuestos. ¡Solo has click!</p>
+					</li>
+					<li>
+						<p class="text-menu">Elige un tamaño.</p>
+						<div class="imgMenu" id="imgTam"></div>
+						<p class="ex">Elige el tamaño de la grilla. Debe ser entre 1 y 50, luego presiona la flecha y ¡listo! Ten cuidado: el dibujo hecho no se guarda si editas el tamaño.</p>
+					</li>
+					<li>
+						<p class="text-menu">¡Pinta!</p>
+						<div class="imgMenu" id="imgPinta"></div>
+						<p class="ex">Utiliza el botón izquierdo para pintar, puedes solo hacer un click o arrastrar. Borra con click derecho o con la ruedilla del ratón.</p>
+					</li>
+					<li>
+						<p class="text-menu">¡Errores!</p>
+						<div class="imgMenu" id="imgBorrar"></div>
+						<p class="ex">Para borrar solo pulsa sobre el tacho de basura. ¡Cuidado!, se eliminará todo, si solo deseas borrar una parte mejor usa el mouse.</p>
+					</li>
+					<li>
+						<p class="text-menu">Descargar imagen.</p>
+						<div class="imgMenu" id="imgDescarga"></div>
+						<p class="ex">Si quieres descargar tu trabajo, ¡sólo has click sobre el botón mostrado!</p>
+					</li>
+					<li>
+						<p class="text-menu">Cuadrícula.</p>
+						<div class="imgMenu" id="imgCuadri"></div>
+						<p class="ex">Para quitar la grilla pulsa el botón del numeral.</p>
+					</li>
+					<li>
+						<p class="text-menu">¡Pintar todo!</p>
+						<p class="ex">Para pintar toda la grilla, has click sobre el color que desees, luego sobre el balde y la grilla.</p>
+					</li>
+			</ol>
+		</div>
+	</nav>
+	<div id="contenedorImg">
+		<div id="fondoContenedorImg"></div>
+		<div id="imgApareceDentro"></div>
+	</div>
+</body>
+</html>
